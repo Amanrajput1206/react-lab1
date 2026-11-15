@@ -23,6 +23,7 @@ export default function App() {
     <main className="app">
       <Header />
       <Matrix matrix={mat} onIncrement={increment} />
+      <Stats matrix={mat} />
     </main>
   );
 }

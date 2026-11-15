@@ -14,5 +14,20 @@
 import { stats } from "./matrix.js";
 
 export default function Stats({ matrix }) {
-  throw new Error("TODO");
+  const statistics = stats(matrix);
+  return (
+    <section className="stats">
+      <h2>Stats</h2>
+      <dl>
+        <dt>Sum</dt>
+        <dd>{statistics.sum}</dd>
+        <dt>Average</dt>
+        <dd>{statistics.average.toFixed(2)}</dd>
+        <dt>Max</dt>
+        <dd>{statistics.max}</dd>
+        <dt>Non-zero</dt>
+        <dd>{statistics.nonZero}</dd>
+      </dl>
+    </section>
+  );
 }
