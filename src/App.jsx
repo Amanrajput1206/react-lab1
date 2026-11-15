@@ -19,6 +19,14 @@ export default function App() {
   }
 
   const [mat, setMatrix] = useState(START);
+
+  useEffect(() => {
+    fetch("/matrix.json")
+      .then((response) => response.json())
+      .then((data) => {
+        setMatrix(data);
+      });
+  }, []);
   return (
     <main className="app">
       <Header />
