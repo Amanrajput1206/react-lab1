@@ -13,9 +13,16 @@ export default function App() {
   //             Pass it down to Matrix as onIncrement.
   // Section 09: render <Stats matrix={…} /> NEXT TO the matrix, not inside it.
   // Section 11: load /matrix.json once, in a useEffect, and put it in the state.
+
+  function increment(row, col) {
+    setMatrix(incrementAt(mat, row, col));
+  }
+
+  const [mat, setMatrix] = useState(START);
   return (
     <main className="app">
       <Header />
+      <Matrix matrix={mat} onIncrement={increment} />
     </main>
   );
 }
